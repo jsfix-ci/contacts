@@ -29,7 +29,10 @@
 				:size="20" />
 		</template>
 		<template v-if="loadingAction" slot="actions">
-			<ActionText icon="icon-loading-small">
+			<ActionText>
+				<template #icon>
+					<IconLoading :size="20" />
+				</template>
 				{{ t('contacts', 'Loading …') }}
 			</ActionText>
 		</template>
@@ -99,6 +102,7 @@ import ActionLink from '@nextcloud/vue/dist/Components/NcActionLink'
 import ActionText from '@nextcloud/vue/dist/Components/NcActionText'
 import AppNavigationCounter from '@nextcloud/vue/dist/Components/NcAppNavigationCounter'
 import AppNavigationItem from '@nextcloud/vue/dist/Components/NcAppNavigationItem'
+import IconLoading from '@nextcloud/vue/dist/Components/NcLoadingIcon'
 import ExitToApp from 'vue-material-design-icons/ExitToApp'
 import IconAdd from 'vue-material-design-icons/Plus'
 import IconDelete from 'vue-material-design-icons/Delete'
@@ -121,6 +125,7 @@ export default {
 		IconDelete,
 		LocationEnter,
 		IconCircles,
+		IconLoading,
 	},
 
 	mixins: [CircleActionsMixin],

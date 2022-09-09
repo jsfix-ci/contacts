@@ -38,14 +38,16 @@
 			</div>
 
 			<!-- Loading -->
-			<EmptyContent v-if="loading" icon="icon-loading">
+			<EmptyContent>
+				<template #icon>
+					<IconLoading v-if="loading" :size="20" />
+				</template>
 				{{ t('contacts', 'Loading …') }}
 			</EmptyContent>
 
-			<template v-else>
+			<template v-if="Object.keys(selectionSet).length > 0">
 				<!-- Picked entities -->
 				<transition-group
-					v-if="Object.keys(selectionSet).length > 0"
 					name="zoom"
 					tag="ul"
 					class="entity-picker__selection">
@@ -103,6 +105,7 @@
 import debounce from 'debounce'
 import VirtualList from 'vue-virtual-scroll-list'
 import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
+import IconLoading from '@nextcloud/vue/dist/Components/NcLoadingIcon'
 import IconSearch from 'vue-material-design-icons/Magnify'
 import Modal from '@nextcloud/vue/dist/Components/NcModal'
 
@@ -116,6 +119,7 @@ export default {
 		EmptyContent,
 		EntityBubble,
 		IconSearch,
+		IconLoading,
 		Modal,
 		VirtualList,
 	},

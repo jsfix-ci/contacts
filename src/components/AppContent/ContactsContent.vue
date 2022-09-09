@@ -22,7 +22,10 @@
 
 <template>
 	<AppContent v-if="loading">
-		<EmptyContent icon="icon-loading">
+		<EmptyContent>
+			<template #icon>
+				<IconLoading :size="20" />
+			</template>
 			{{ t('contacts', 'Loading contacts …') }}
 		</EmptyContent>
 	</AppContent>
@@ -78,6 +81,7 @@ import { emit } from '@nextcloud/event-bus'
 import AppContent from '@nextcloud/vue/dist/Components/NcAppContent'
 import Button from '@nextcloud/vue/dist/Components/NcButton'
 import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
+import IconLoading from '@nextcloud/vue/dist/Components/NcLoadingIcon'
 
 import ContactDetails from '../ContactDetails'
 import ContactsList from '../ContactsList'
@@ -94,6 +98,7 @@ export default {
 		ContactsList,
 		EmptyContent,
 		IconContact,
+		IconLoading,
 	},
 
 	mixins: [RouterMixin],

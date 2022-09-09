@@ -21,7 +21,10 @@
   -->
 
 <template>
-	<AppNavigation :class="{'icon-loading': loading}">
+	<AppNavigation>
+		<template #icon>
+			<IconLoading v-if="loading" :size="20" />
+		</template>
 		<slot />
 
 		<!-- groups list -->
@@ -177,6 +180,7 @@ import AppNavigationCounter from '@nextcloud/vue/dist/Components/NcAppNavigation
 import AppNavigationItem from '@nextcloud/vue/dist/Components/NcAppNavigationItem'
 import AppNavigationSettings from '@nextcloud/vue/dist/Components/NcAppNavigationSettings'
 import AppNavigationCaption from '@nextcloud/vue/dist/Components/NcAppNavigationCaption'
+import IconLoading from '@nextcloud/vue/dist/Components/NcLoadingIcon'
 
 import naturalCompare from 'string-natural-compare'
 
@@ -214,6 +218,7 @@ export default {
 		IconUser,
 		IconAdd,
 		IconError,
+		IconLoading,
 		IconRecentlyContacted,
 		NewCircleIntro,
 		SettingsSection,

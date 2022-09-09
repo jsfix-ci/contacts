@@ -87,8 +87,10 @@
 						@change.stop.prevent="toggleAddressbookEnabled">
 						{{ t('contacts', 'Enabled') }}
 					</ActionCheckbox>
-					<ActionButton v-else
-						icon="icon-loading-small">
+					<ActionButton v-else>
+						<template #icon>
+							<IconLoading :size="20" />
+						</template>
 						{{ t('contacts', 'Enabled') }}
 					</ActionButton>
 				</template>

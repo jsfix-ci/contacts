@@ -185,7 +185,7 @@
 			</Modal>
 
 			<!-- contact details loading -->
-			<section v-if="loadingData" class="icon-loading contact-details" />
+			<IconLoading v-if="loadingData" :size="20" class="contact-details" />
 
 			<!-- contact details -->
 			<section v-else
@@ -263,6 +263,7 @@ import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
 import IconContact from 'vue-material-design-icons/AccountMultiple'
 import Modal from '@nextcloud/vue/dist/Components/NcModal'
 import Multiselect from '@nextcloud/vue/dist/Components/NcMultiselect'
+import IconLoading from '@nextcloud/vue/dist/Components/NcLoadingIcon'
 import IconDownload from 'vue-material-design-icons/Download'
 import IconDelete from 'vue-material-design-icons/Delete'
 import IconQr from 'vue-material-design-icons/Qrcode'
@@ -299,6 +300,7 @@ export default {
 		IconDelete,
 		IconQr,
 		IconCopy,
+		IconLoading,
 		Modal,
 		Multiselect,
 		PropertyGroups,

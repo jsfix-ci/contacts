@@ -32,7 +32,10 @@
 	</AppContent>
 
 	<AppContent v-else-if="loading">
-		<EmptyContent icon="icon-loading">
+		<EmptyContent>
+			<template #icon>
+				<IconLoading :size="20" />
+			</template>
 			{{ t('contacts', 'Loading circle …') }}
 		</EmptyContent>
 	</AppContent>
@@ -51,7 +54,10 @@
 			<!-- not a member -->
 			<template v-if="!circle.isMember">
 				<!-- Pending request validation -->
-				<EmptyContent v-if="circle.isPendingMember" icon="icon-loading">
+				<EmptyContent v-if="circle.isPendingMember">
+					<template #icon>
+						<IconLoading :size="20" />
+					</template>
 					{{ t('contacts', 'Your request to join this circle is pending approval') }}
 				</EmptyContent>
 
@@ -70,6 +76,7 @@
 import { showError } from '@nextcloud/dialogs'
 import AppContent from '@nextcloud/vue/dist/Components/NcAppContent'
 import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
+import IconLoading from '@nextcloud/vue/dist/Components/NcLoadingIcon'
 import isMobile from '@nextcloud/vue/dist/Mixins/isMobile'
 import IconCircles from '../Icons/IconCircles'
 import CircleDetails from '../CircleDetails'
@@ -85,6 +92,7 @@ export default {
 		EmptyContent,
 		MemberList,
 		IconCircles,
+		IconLoading,
 	},
 
 	mixins: [isMobile, RouterMixin],
