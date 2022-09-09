@@ -75,9 +75,9 @@
 </template>
 <script>
 import { emit } from '@nextcloud/event-bus'
-import AppContent from '@nextcloud/vue/dist/Components/AppContent'
-import Button from '@nextcloud/vue/dist/Components/Button'
-import EmptyContent from '@nextcloud/vue/dist/Components/EmptyContent'
+import AppContent from '@nextcloud/vue/dist/Components/NcAppContent'
+import Button from '@nextcloud/vue/dist/Components/NcButton'
+import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
 
 import ContactDetails from '../ContactDetails'
 import ContactsList from '../ContactsList'

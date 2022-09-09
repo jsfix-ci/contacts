@@ -169,14 +169,14 @@
 <script>
 import { GROUP_ALL_CONTACTS, GROUP_NO_GROUP_CONTACTS, GROUP_RECENTLY_CONTACTED, ELLIPSIS_COUNT, CIRCLE_DESC } from '../../models/constants.ts'
 
-import ActionButton from '@nextcloud/vue/dist/Components/ActionButton'
-import ActionInput from '@nextcloud/vue/dist/Components/ActionInput'
-import ActionText from '@nextcloud/vue/dist/Components/ActionText'
-import AppNavigation from '@nextcloud/vue/dist/Components/AppNavigation'
-import AppNavigationCounter from '@nextcloud/vue/dist/Components/AppNavigationCounter'
-import AppNavigationItem from '@nextcloud/vue/dist/Components/AppNavigationItem'
-import AppNavigationSettings from '@nextcloud/vue/dist/Components/AppNavigationSettings'
-import AppNavigationCaption from '@nextcloud/vue/dist/Components/AppNavigationCaption'
+import ActionButton from '@nextcloud/vue/dist/Components/NcActionButton'
+import ActionInput from '@nextcloud/vue/dist/Components/NcActionInput'
+import ActionText from '@nextcloud/vue/dist/Components/NcActionText'
+import AppNavigation from '@nextcloud/vue/dist/Components/NcAppNavigation'
+import AppNavigationCounter from '@nextcloud/vue/dist/Components/NcAppNavigationCounter'
+import AppNavigationItem from '@nextcloud/vue/dist/Components/NcAppNavigationItem'
+import AppNavigationSettings from '@nextcloud/vue/dist/Components/NcAppNavigationSettings'
+import AppNavigationCaption from '@nextcloud/vue/dist/Components/NcAppNavigationCaption'
 
 import naturalCompare from 'string-natural-compare'
 

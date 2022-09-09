@@ -68,8 +68,8 @@
 </template>
 <script>
 import { showError } from '@nextcloud/dialogs'
-import AppContent from '@nextcloud/vue/dist/Components/AppContent'
-import EmptyContent from '@nextcloud/vue/dist/Components/EmptyContent'
+import AppContent from '@nextcloud/vue/dist/Components/NcAppContent'
+import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
 import isMobile from '@nextcloud/vue/dist/Mixins/isMobile'
 import IconCircles from '../Icons/IconCircles'
 import CircleDetails from '../CircleDetails'

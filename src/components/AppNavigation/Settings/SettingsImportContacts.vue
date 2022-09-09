@@ -95,9 +95,9 @@
 </template>
 
 <script>
-import Button from '@nextcloud/vue/dist/Components/Button'
-import Modal from '@nextcloud/vue/dist/Components/Modal'
-import Multiselect from '@nextcloud/vue/dist/Components/Multiselect'
+import Button from '@nextcloud/vue/dist/Components/NcButton'
+import Modal from '@nextcloud/vue/dist/Components/NcModal'
+import Multiselect from '@nextcloud/vue/dist/Components/NcMultiselect'
 import { encodePath } from '@nextcloud/paths'
 import { getCurrentUser } from '@nextcloud/auth'
 import { generateRemoteUrl } from '@nextcloud/router'

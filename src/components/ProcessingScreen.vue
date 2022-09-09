@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import EmptyContent from '@nextcloud/vue/dist/Components/EmptyContent'
+import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
 
 export default {
 	name: 'ProcessingScreen',

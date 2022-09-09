@@ -102,9 +102,9 @@
 <script>
 import debounce from 'debounce'
 import VirtualList from 'vue-virtual-scroll-list'
-import EmptyContent from '@nextcloud/vue/dist/Components/EmptyContent'
+import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
 import IconSearch from 'vue-material-design-icons/Magnify'
-import Modal from '@nextcloud/vue/dist/Components/Modal'
+import Modal from '@nextcloud/vue/dist/Components/NcModal'
 
 import EntityBubble from './EntityBubble'
 import EntitySearchResult from './EntitySearchResult'

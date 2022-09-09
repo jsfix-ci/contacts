@@ -84,9 +84,9 @@
 </template>
 
 <script>
-import AppContentList from '@nextcloud/vue/dist/Components/AppContentList'
-import Button from '@nextcloud/vue/dist/Components/Button'
-import EmptyContent from '@nextcloud/vue/dist/Components/EmptyContent'
+import AppContentList from '@nextcloud/vue/dist/Components/NcAppContentList'
+import Button from '@nextcloud/vue/dist/Components/NcButton'
+import EmptyContent from '@nextcloud/vue/dist/Components/NcEmptyContent'
 import isMobile from '@nextcloud/vue/dist/Mixins/isMobile'
 import VirtualList from 'vue-virtual-scroll-list'
 
