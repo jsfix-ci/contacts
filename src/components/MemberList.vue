@@ -22,28 +22,32 @@
 
 <template>
 	<AppContentList v-if="!hasMembers" class="members-list">
-		<EmptyContent>
-			<template #icon>
-				<IconLoading v-if="loading" :size="20" />
-			</template>
-			{{ t('contacts', 'Loading members list …') }}
-		</EmptyContent>
-
-		<EmptyContent>
-			<template #icon>
-				<IconContact v-if="!circle.isMember"
-					:size="20" />
-			</template>
-			{{ t('contacts', 'The list of members is only visible to members of this circle') }}
-		</EmptyContent>
-
-		<EmptyContent>
-			<template #icon>
-				<IconContact v-else
-					:size="20" />
-			</template>
-			{{ t('contacts', 'There is no member in this circle') }}
-		</EmptyContent>
+		<template v-if="loading">
+			<EmptyContent>
+				<template #icon>
+					<IconLoading :size="20" />
+				</template>
+				{{ t('contacts', 'Loading members list …') }}
+			</EmptyContent>
+		</template>
+		<template v-else-if="!circle.isMember">
+			<EmptyContent>
+				<template #icon>
+					<IconContact
+						:size="20" />
+				</template>
+				{{ t('contacts', 'The list of members is only visible to members of this circle') }}
+			</EmptyContent>
+		</template>
+		<template v-else>
+			<EmptyContent>
+				<template #icon>
+					<IconContact
+						:size="20" />
+				</template>
+				{{ t('contacts', 'There is no member in this circle') }}
+			</EmptyContent>
+		</template>
 	</AppContentList>
 
 	<AppContentList v-else :class="{ showdetails: showDetails }">
