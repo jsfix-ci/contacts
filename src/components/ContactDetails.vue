@@ -23,14 +23,12 @@
 <template>
 	<AppContentDetails>
 		<!-- nothing selected or contact not found -->
-		<EmptyContent v-if="!contact">
+		<EmptyContent v-if="!contact"
+			:title="t('contacts', 'No contact selected')"
+			:description="t('contacts', 'Select a contact on the list to begin')">
 			<template #icon>
 				<IconContact
 					:size="20" />
-			</template>
-			{{ t('contacts', 'No contact selected') }}
-			<template #desc>
-				{{ t('contacts', 'Select a contact on the list to begin') }}
 			</template>
 		</EmptyContent>
 

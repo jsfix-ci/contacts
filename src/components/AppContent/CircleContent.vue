@@ -22,21 +22,19 @@
 
 <template>
 	<AppContent v-if="!circle">
-		<EmptyContent>
+		<EmptyContent :title="t('contacts', 'Please select a circle')">
 			<template #icon>
 				<IconCircles
 					:size="20" />
 			</template>
-			{{ t('contacts', 'Please select a circle') }}
 		</EmptyContent>
 	</AppContent>
 
 	<AppContent v-else-if="loading">
-		<EmptyContent>
+		<EmptyContent :title="t('contacts', 'Loading circle …')">
 			<template #icon>
 				<IconLoading :size="20" />
 			</template>
-			{{ t('contacts', 'Loading circle …') }}
 		</EmptyContent>
 	</AppContent>
 
@@ -54,19 +52,17 @@
 			<!-- not a member -->
 			<template v-if="!circle.isMember">
 				<!-- Pending request validation -->
-				<EmptyContent v-if="circle.isPendingMember">
+				<EmptyContent v-if="circle.isPendingMember" :title="t('contacts', 'Your request to join this circle is pending approval')">
 					<template #icon>
 						<IconLoading :size="20" />
 					</template>
-					{{ t('contacts', 'Your request to join this circle is pending approval') }}
 				</EmptyContent>
 
-				<EmptyContent v-else>
+				<EmptyContent v-else :title="t('contacts', 'You are not a member of {circle}', { circle: circle.displayName})">
 					<template #icon>
 						<IconCircles
 							:size="20" />
 					</template>
-					{{ t('contacts', 'You are not a member of {circle}', { circle: circle.displayName}) }}
 				</EmptyContent>
 			</template>
 		</CircleDetails>

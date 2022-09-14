@@ -22,21 +22,19 @@
 
 <template>
 	<AppContent v-if="loading">
-		<EmptyContent>
+		<EmptyContent :title="t('contacts', 'Loading contacts …')">
 			<template #icon>
 				<IconLoading :size="20" />
 			</template>
-			{{ t('contacts', 'Loading contacts …') }}
 		</EmptyContent>
 	</AppContent>
 
 	<AppContent v-else-if="isEmptyGroup && !isRealGroup">
-		<EmptyContent>
+		<EmptyContent :title="t('contacts', 'There are no contacts yet')">
 			<template #icon>
 				<IconContact
 					:size="20" />
 			</template>
-			{{ t('contacts', 'There are no contacts yet') }}
 			<template #desc>
 				<Button type="primary" @click="newContact">
 					{{ t('contacts', 'Create contact') }}
@@ -46,12 +44,11 @@
 	</AppContent>
 
 	<AppContent v-else-if="isEmptyGroup && isRealGroup">
-		<EmptyContent>
+		<EmptyContent :title=" t('contacts', 'There are no contacts in this group')">
 			<template #icon>
 				<IconContact
 					:size="20" />
 			</template>
-			{{ t('contacts', 'There are no contacts in this group') }}
 			<template #desc>
 				<Button v-if="contacts.length === 0" type="primary" @click="addContactsToGroup(selectedGroup)">
 					{{ t('contacts', 'Create contacts') }}

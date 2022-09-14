@@ -38,11 +38,10 @@
 			</div>
 
 			<!-- Loading -->
-			<EmptyContent>
+			<EmptyContent :title="t('contacts', 'Loading …')">
 				<template #icon>
 					<IconLoading v-if="loading" :size="20" />
 				</template>
-				{{ t('contacts', 'Loading …') }}
 			</EmptyContent>
 
 			<template v-if="Object.keys(selectionSet).length > 0">
@@ -59,11 +58,10 @@
 				</transition-group>
 
 				<!-- No recommendations -->
-				<EmptyContent v-if="dataSet.length === 0">
+				<EmptyContent v-if="dataSet.length === 0" :title="t('contacts', 'Search for people to add')">
 					<template #icon>
 						<IconSearch :size="20" />
 					</template>
-					{{ t('contacts', 'Search for people to add') }}
 				</EmptyContent>
 
 				<!-- Searched & picked entities -->
@@ -75,11 +73,10 @@
 					:estimate-size="44"
 					:extra-props="{ selection: selectionSet, onClick }" />
 
-				<EmptyContent v-else-if="searchQuery">
+				<EmptyContent v-else-if="searchQuery" :title="t('contacts', 'No results')">
 					<template #icon>
 						<IconSearch :size="20" />
 					</template>
-					{{ t('contacts', 'No results') }}
 				</EmptyContent>
 
 				<div class="entity-picker__navigation">
